@@ -1,0 +1,65 @@
+package org.example;
+
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import org.example.utilies.Validation;
+
+public class PrimaryController {
+
+    @FXML
+    private TextField phoneNumber;
+
+    @FXML
+    private Text errorPhoneNumber;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private Text errorPassword;
+
+    @FXML
+    private Button loginButton;
+    @FXML
+    private void switchToLogin() throws IOException {
+        App.setRoot("secondary");
+    }
+
+    @FXML
+    private void phoneNumberChanged(KeyEvent evnet){
+        if(!Validation.validatePhoneNumber(phoneNumber.getText())){
+            errorPhoneNumber.setVisible(true);
+            password.setDisable(true);
+            loginButton.setDisable(true);
+            errorPhoneNumber.setText("Not A Valid Phone Number");
+        }
+        else{
+            password.setDisable(false);
+            loginButton.setDisable(false);
+            errorPhoneNumber.setVisible(false);
+        }
+
+    }
+    @FXML
+    private void loginButtonClicked(ActionEvent evnet){
+        if(!Validation.validatePhoneNumber(phoneNumber.getText())){
+            errorPhoneNumber.setVisible(true);
+            errorPhoneNumber.setText("Not A Valid Phone Number");
+        }
+        else{
+            password.setDisable(false);
+            errorPhoneNumber.setVisible(false);
+        }
+
+
+
+
+    }
+}

@@ -1,0 +1,33 @@
+
+
+
+.all{
+
+    -fx-background-color: red;
+}
+.inputStyle{
+    -fx-background-color: transparent;
+    -fx-border-color: #0598ff ;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+.main-background-color{
+    -fx-background-color: #0598ff;
+}
+.main-color{
+    -fx-text-fill: #0598ff;
+}
+.main-color-text{
+    -fx-fill: #0598ff;
+}
+.color-white{
+    -fx-text-fill: white;
+}
+.color-white-text{
+    -fx-fill: white;
+}
+.error-color{
+    -fx-fill: red;
+}
+.error-background{
+    -fx-background-color: red;
+}
