@@ -28,8 +28,13 @@ public class PrimaryController {
     @FXML
     private Button loginButton;
     @FXML
-    private void switchToLogin() throws IOException {
-        App.setRoot("secondary");
+    private void switchToLogin()  {
+        try {
+            App.setRoot("register");
+        }
+        catch(IOException e){
+            System.out.println("no fxml file");
+        }
     }
 
     @FXML

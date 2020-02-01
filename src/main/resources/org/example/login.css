@@ -13,8 +13,24 @@
 .main-background-color{
     -fx-background-color: #0598ff;
 }
+.inputStyle-textArea{
+    -fx-background-color: transparent;
+    -fx-border-color: #0598ff ;
+    -fx-border-width: 2px 2px 2px 2px;
+}
+.back-button {
+
+    -fx-background-color: #0598ff;
+    border-bottom:1px;
+
+
+}
 .main-color{
     -fx-text-fill: #0598ff;
+}
+.list-cell
+{
+    -fx-text-fill:ababab;
 }
 .main-color-text{
     -fx-fill: #0598ff;
