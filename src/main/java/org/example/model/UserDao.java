@@ -7,8 +7,6 @@ public interface UserDao {
 
     User getUser(int id);
 
-    User getUser(String name);
-
     boolean updateUser(int id, User user);
 
     boolean deleteUser(int id);
