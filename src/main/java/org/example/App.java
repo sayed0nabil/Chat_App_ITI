@@ -44,13 +44,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        try{
-            UserDaoImpl userDao = new UserDaoImpl();
-            User user = userDao.getUser(1);
-            System.out.println(user.getName());
-        }catch(SQLException e){
-
-        }
         launch();
     }
 
