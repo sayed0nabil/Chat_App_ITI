@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label prefHeight="25.0" prefWidth="223.0" text="Abeer Emad" textFill="#224172" wrapText="true">
+         <font>
+            <Font name="Bookman Old Style" size="17.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="85.0" prefWidth="480.0" style="-fx-background-radius: 30; -fx-background-color: #b2ddfb;">
+         <children>
+            <Circle fx:id="mycircle" fill="#bbc9d7" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ejhgfjehwgfgsdfkgkdsjgfkjdsgfljdskgbfdshfkkjfghdfgdsfdgfgdfkdskfgdskjgfdsjkghfkfkgdsfgdksdsfafh" wrappingWidth="362.13671875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</VBox>
