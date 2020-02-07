@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ChatController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+
+            <Pane prefHeight="600.0" prefWidth="86.0" style="-fx-background-color: #045ba5;">
+                  <FontIcon fx:id="profileIcon" iconColor="WHITE" iconLiteral="oct-person" iconSize="30" layoutX="30.0" layoutY="140.0" />
+                  <FontIcon fx:id="groupIcon" iconColor="WHITE" iconLiteral="dashicons-groups" iconSize="35" layoutX="24.0" layoutY="200.0" />
+                  <FontIcon fx:id="logoutIcon" iconColor="WHITE" iconLiteral="oi-account-logout" iconSize="30" layoutX="30.0" layoutY="555.0" />
+                  <FontIcon fx:id="addFriendIcon" iconColor="WHITE" iconLiteral="enty-add-user" iconSize="30" layoutX="29.0" layoutY="260.0" />
+                  <FontIcon fx:id="notificationIcon" iconColor="WHITE" iconLiteral="gmi-notifications" iconSize="35" layoutX="23.0" layoutY="315.0" />
+                  <FontIcon fx:id="saveChatIcon" iconColor="WHITE" iconLiteral="oct-file" iconSize="30" layoutX="29.0" layoutY="367.0" />
+               </Pane>
+            <Circle fill="WHITE" layoutX="42.0" layoutY="45.0" radius="31.0" stroke="#7eff21" strokeType="INSIDE" strokeWidth="5.0" />
+            <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@user.png" />
+            </ImageView>
+            <VBox layoutX="86.0" prefHeight="600.0" prefWidth="257.0" style="-fx-background-color: #1e82dc;">
+                  <HBox prefHeight="74.0" prefWidth="257.0">
+                        <TextField prefHeight="38.0" prefWidth="208.0" promptText="Search" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 30;">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                  </HBox>
+                  <HBox prefHeight="48.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;">
+                        <ImageView fitHeight="57.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                              <Image url="@user.png" />
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Circle fill="#7eff21" radius="6.0" stroke="BLACK" strokeType="INSIDE">
+                           <HBox.margin>
+                              <Insets top="45.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Label prefHeight="48.0" prefWidth="132.0" style="-fx-text-fill: white;" text="Shimaa Shokry " textFill="#41fcff">
+                           <font>
+                              <Font name="Comic Sans MS" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                  </HBox>
+                  <HBox prefHeight="44.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;">
+                        <ImageView fitHeight="57.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                              <Image url="@user.png" />
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Circle fill="#ff3021" radius="6.0" stroke="BLACK" strokeType="INSIDE">
+                           <HBox.margin>
+                              <Insets top="45.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Label prefHeight="48.0" prefWidth="132.0" style="-fx-text-fill: white;" text="Aya Amin" textFill="#41fcff">
+                           <font>
+                              <Font name="Comic Sans MS" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <FontIcon />
+                  </HBox>
+            </VBox>
+            <GridPane layoutX="342.0" layoutY="-2.0" prefHeight="600.0" prefWidth="555.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="451.0" minHeight="10.0" prefHeight="412.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="193.0" minHeight="3.0" prefHeight="96.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+                  <HBox prefHeight="95.0" prefWidth="555.0" GridPane.rowIndex="2">
+                        <FontIcon iconColor="#1e82dc" iconLiteral="dashicons-microphone" iconSize="35">
+                           <HBox.margin>
+                              <Insets left="15.0" top="25.0" />
+                           </HBox.margin>
+                        </FontIcon>
+                        <TextArea fx:id="messageTextArea" maxHeight="50.0" prefHeight="68.0" prefWidth="402.0" promptText="Enter Your Message" stylesheets="@textArea.css" wrapText="true">
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="content" />
+                              <String fx:value="scroll-pane" />
+                              <String fx:value="text-area" />
+                           </styleClass>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </TextArea>
+                        <Button minWidth="49.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="36.0" prefWidth="53.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-font-size: 18; -fx-font-weight: bold; -fx-font-family: Comic Sans MS; -fx-background-color: #1e82dc; -fx-text-fill: white;">
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="dashicons-controls-play" iconSize="40" wrappingWidth="35.0" />
+                           </graphic>
+                        </Button>
+                  </HBox>
+                  <ScrollPane prefHeight="426.0" prefWidth="555.0" GridPane.rowIndex="1">
+                        <VBox prefHeight="410.0" prefWidth="552.0" style="-fx-border-color: #ffffff  #ffffff  #1e82dc #ffffff;" />
+                  </ScrollPane>
+                  <HBox prefHeight="101.0" prefWidth="555.0" style="-fx-border-color: #ffffff  #ffffff  #1e82dc #ffffff;">
+                        <ImageView fitHeight="75.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                              <Image url="@group.png" />
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="91.0" prefWidth="201.0" style="-fx-text-fill: #1e82dc;" text="Java Project Team">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <FontIcon iconColor="#1e82dc" iconLiteral="dashicons-video-alt2" iconSize="30">
+                           <HBox.margin>
+                              <Insets left="110.0" right="15.0" top="35.0" />
+                           </HBox.margin>
+                        </FontIcon>
+                        <FontIcon iconColor="#1e82dc" iconLiteral="dashicons-phone" iconSize="30">
+                           <HBox.margin>
+                              <Insets right="15.0" top="35.0" />
+                           </HBox.margin>
+                        </FontIcon>
+                        <FontIcon iconColor="#1e82dc" iconLiteral="dashicons-paperclip" iconSize="30" wrappingWidth="28.25">
+                           <HBox.margin>
+                              <Insets top="35.0" />
+                           </HBox.margin>
+                        </FontIcon>
+                  </HBox>
+            </GridPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

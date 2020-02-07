@@ -5,19 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.DB.DBConnection;
-import org.example.model.User;
-import org.example.model.UserDaoImpl;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-import java.util.Properties;
 
 /**
  * JavaFX App
@@ -34,7 +23,7 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    static public void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 

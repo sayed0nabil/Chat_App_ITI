@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import org.example.App;
 
 public class RegisterController implements Initializable {
 
