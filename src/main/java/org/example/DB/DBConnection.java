@@ -1,5 +1,8 @@
 package org.example.DB;
 
+import javax.sql.DataSource;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +18,11 @@ public class DBConnection {
             System.err.println("Error: " + cnfe.getMessage());
         }
         //databaseInfo=new DatabaseInfoDialog().showAndWait().get();
-        conn = DriverManager.getConnection(databaseInfo.getURL(), databaseInfo.getUser(), databaseInfo.getPassword());
+//        databaseInfo = new DatabaseInfo("jdbc:mysql://localhost:3306/chat_app", "root", "root");
+//        conn = DriverManager.getConnection(databaseInfo.getURL(), databaseInfo.getUser(), databaseInfo.getPassword());
+
+        DataSource dataSource = MyDataSourceFactory.getMySQLDataSource();
+        conn = dataSource.getConnection();
         return conn;
     }
 

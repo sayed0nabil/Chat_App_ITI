@@ -4,11 +4,18 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.example.App;
+import org.example.ChatController;
 import org.example.utilies.Validation;
 
 public class PrimaryController {
@@ -53,7 +60,7 @@ public class PrimaryController {
 
     }
     @FXML
-    private void loginButtonClicked(ActionEvent evnet){
+    private void loginButtonClicked(ActionEvent event){
         if(!Validation.validatePhoneNumber(phoneNumber.getText())){
             errorPhoneNumber.setVisible(true);
             errorPhoneNumber.setText("Not A Valid Phone Number");
@@ -61,10 +68,16 @@ public class PrimaryController {
         else{
             password.setDisable(false);
             errorPhoneNumber.setVisible(false);
+            loadChatPage(event);
         }
+    }
 
-
-
-
+    private void loadChatPage(ActionEvent event){
+        try {
+            App.setRoot("chat");
+        }
+            catch(IOException e){
+            System.out.println("no chat.fxml file");
+        }
     }
 }
