@@ -48,4 +48,7 @@ public class RegisterController implements Initializable {
         female.setToggleGroup(tg);
         male.setToggleGroup(tg);
     }
+
+    public RegisterController() {
+    }
 }
