@@ -3,6 +3,10 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import org.example.model.Contact;
+import org.example.model.UserStatus;
 import org.kordamp.ikonli.javafx.FontIcon;
 import javafx.scene.control.Tooltip;
 import java.net.URL;
@@ -14,9 +18,15 @@ public class ChatController implements Initializable, ChatControllerInterface {
     TextArea messageTextArea;
     @FXML
     FontIcon profileIcon, groupIcon, logoutIcon, addFriendIcon, notificationIcon, saveChatIcon;
+
+    @FXML
+    VBox contactsList;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setToolTip();
+        Contact contact=new Contact("Abdelrahman",new Image(getClass().getResourceAsStream("abdo.jpg")), UserStatus.ONLINE);
+        contactsList.getChildren().add(contact);
     }
 
     @Override

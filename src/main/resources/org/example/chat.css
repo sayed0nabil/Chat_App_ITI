@@ -1,0 +1,12 @@
+.contact{
+    -fx-background-color:  #1e82dc;
+    -fx-padding: 10 0 10 15; -fx-border-width: 2px;
+    -fx-border-color: #1e82dc #1e82dc white #1e82dc
+}
+.contact:hover{
+    -fx-background-color:  #045ba5;
+}
+.sidebar_icon:hover{
+    -fx-fill:  #1e82dc;
+    -fx-cursor: hand;
+}
