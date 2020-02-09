@@ -56,7 +56,7 @@
                <children>
                   <VBox prefHeight="43.0" prefWidth="226.0">
                      <children>
-                        <ComboBox fx:id="countryBox" accessibleRole="CHECK_MENU_ITEM" editable="true" onHiding="#checkComboBox" prefHeight="27.0" prefWidth="191.0" promptText="Country" styleClass="inputStyle" />
+                        <ComboBox fx:id="countryBox" accessibleRole="CHECK_MENU_ITEM" editable="true" onAction="#checkComboBox" onHiding="#checkComboBox" prefHeight="27.0" prefWidth="191.0" promptText="Country" styleClass="inputStyle" />
                         <Text fx:id="countryError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="205.8001389503479" />
                      </children>
                   </VBox>
