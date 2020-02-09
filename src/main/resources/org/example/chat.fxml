@@ -9,23 +9,23 @@
 <?import javafx.scene.text.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ChatController">
+<BorderPane prefHeight="500.0" prefWidth="700.0" stylesheets="@chat.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ChatController">
    <center>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
 
             <Pane prefHeight="600.0" prefWidth="86.0" style="-fx-background-color: #045ba5;">
-                  <FontIcon fx:id="profileIcon" iconColor="WHITE" iconLiteral="oct-person" iconSize="30" layoutX="30.0" layoutY="140.0" />
-                  <FontIcon fx:id="groupIcon" iconColor="WHITE" iconLiteral="dashicons-groups" iconSize="35" layoutX="24.0" layoutY="200.0" />
-                  <FontIcon fx:id="logoutIcon" iconColor="WHITE" iconLiteral="oi-account-logout" iconSize="30" layoutX="30.0" layoutY="555.0" />
-                  <FontIcon fx:id="addFriendIcon" iconColor="WHITE" iconLiteral="enty-add-user" iconSize="30" layoutX="29.0" layoutY="260.0" />
-                  <FontIcon fx:id="notificationIcon" iconColor="WHITE" iconLiteral="gmi-notifications" iconSize="35" layoutX="23.0" layoutY="315.0" />
-                  <FontIcon fx:id="saveChatIcon" iconColor="WHITE" iconLiteral="oct-file" iconSize="30" layoutX="29.0" layoutY="367.0" />
+                  <FontIcon fx:id="profileIcon" iconColor="WHITE" iconLiteral="oct-person" iconSize="30" layoutX="30.0" layoutY="140.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
+                  <FontIcon fx:id="groupIcon" iconColor="WHITE" iconLiteral="dashicons-groups" iconSize="35" layoutX="24.0" layoutY="200.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
+                  <FontIcon fx:id="logoutIcon" iconColor="WHITE" iconLiteral="oi-account-logout" iconSize="30" layoutX="30.0" layoutY="555.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
+                  <FontIcon fx:id="addFriendIcon" iconColor="WHITE" iconLiteral="enty-add-user" iconSize="30" layoutX="29.0" layoutY="260.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
+                  <FontIcon fx:id="notificationIcon" iconColor="WHITE" iconLiteral="gmi-notifications" iconSize="35" layoutX="23.0" layoutY="315.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
+                  <FontIcon fx:id="saveChatIcon" iconColor="WHITE" iconLiteral="oct-file" iconSize="30" layoutX="29.0" layoutY="367.0" selectionFill="#1e82dc" styleClass="sidebar_icon" />
                </Pane>
             <Circle fill="WHITE" layoutX="42.0" layoutY="45.0" radius="31.0" stroke="#7eff21" strokeType="INSIDE" strokeWidth="5.0" />
             <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                   <Image url="@user.png" />
             </ImageView>
-            <VBox layoutX="86.0" prefHeight="600.0" prefWidth="257.0" style="-fx-background-color: #1e82dc;">
+            <VBox fx:id="contactsList" layoutX="86.0" prefHeight="600.0" prefWidth="257.0" style="-fx-background-color: #1e82dc;">
                   <HBox prefHeight="74.0" prefWidth="257.0">
                         <TextField prefHeight="38.0" prefWidth="208.0" promptText="Search" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 30;">
                            <HBox.margin>
@@ -33,7 +33,7 @@
                            </HBox.margin>
                         </TextField>
                   </HBox>
-                  <HBox prefHeight="48.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;">
+                  <HBox prefHeight="48.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;" styleClass="contact">
                         <ImageView fitHeight="57.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                               <Image url="@user.png" />
                            <HBox.margin>
@@ -54,7 +54,7 @@
                            </HBox.margin>
                         </Label>
                   </HBox>
-                  <HBox prefHeight="44.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;">
+                  <HBox prefHeight="44.0" prefWidth="257.0" style="-fx-border-color: #1e82dc  #1e82dc  #ffffff  #1e82dc; -fx-border-width: 0.5;" styleClass="contact">
                         <ImageView fitHeight="57.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                               <Image url="@user.png" />
                            <HBox.margin>
