@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -21,9 +20,7 @@
    <children>
       <VBox prefHeight="500.0" prefWidth="150.0" styleClass="main-background-color">
          <children>
-            <JFXButton cancelButton="true" prefHeight="47.0" prefWidth="167.0"  >
 
-            </JFXButton>
          </children></VBox>
       <BorderPane prefHeight="500.0" prefWidth="550.0" styleClass="color-white">
          <top>
@@ -42,7 +39,11 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Circle fill="#cacaca" layoutX="99.0" layoutY="56.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circlePhoto" fill="#cacaca" layoutX="99.0" layoutY="56.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Button layoutX="59.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleAddPhotoAction" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: TRANSPARNT;" text="Add Photo">
+                                 <font>
+                                    <Font name="Bodoni MT Black Italic" size="8.0" />
+                                 </font></Button>
                            </children>
                         </AnchorPane>
                      </children>
@@ -51,20 +52,22 @@
             </VBox>
          </top>
          <right>
-            <VBox prefHeight="446.0" prefWidth="291.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="356.0" prefWidth="268.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  <VBox prefHeight="43.0" prefWidth="226.0">
                      <children>
-                        <ComboBox fx:id="country" accessibleRole="CHECK_MENU_ITEM" prefHeight="26.0" prefWidth="172.0" promptText="Country" styleClass="inputStyle" />
+                        <ComboBox fx:id="countryBox" accessibleRole="CHECK_MENU_ITEM" editable="true" onHiding="#checkComboBox" prefHeight="27.0" prefWidth="191.0" promptText="Country" styleClass="inputStyle" />
+                        <Text fx:id="countryError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="205.8001389503479" />
                      </children>
-                  </HBox>
-                  <VBox prefHeight="32.0" prefWidth="245.0">
+                  </VBox>
+                  <VBox prefHeight="39.0" prefWidth="219.0">
                      <children>
                         <HBox prefHeight="51.0" prefWidth="249.0" spacing="20.0">
                            <children>
-                              <DatePicker fx:id="dateOfBirth" prefHeight="31.0" prefWidth="178.0" promptText="Date Of Birth" style="-fx-background-color: transparent;" styleClass="inputStyle" />
+                              <DatePicker fx:id="dateOfBirth" editable="false" onHiding="#checkDatePicker" prefHeight="31.0" prefWidth="196.0" promptText="Date Of Birth" style="-fx-background-color: transparent;" styleClass="inputStyle" />
                            </children>
                         </HBox>
+                        <Text fx:id="dateError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="205.8001389503479" />
                      </children>
                   </VBox>
                   <VBox prefHeight="62.0" prefWidth="248.0" spacing="2.0">
@@ -77,19 +80,27 @@
                                     <Font size="13.0" />
                                  </font>
                               </Text>
-                              <RadioButton fx:id="female" mnemonicParsing="false" prefHeight="18.0" prefWidth="93.0" text="Female" />
-                              <RadioButton fx:id="male" mnemonicParsing="false" text="Male" />
+                              <RadioButton fx:id="female" mnemonicParsing="false" onMouseClicked="#checkingRadioButtons" prefHeight="18.0" prefWidth="93.0" text="Female" />
+                              <RadioButton fx:id="male" mnemonicParsing="false" onMouseClicked="#checkingRadioButtons" text="Male" />
                            </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="radioButtonError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="205.8001389503479" />
+                           </children></HBox>
                      </children>
                   </VBox>
-                  <HBox prefHeight="64.0" prefWidth="245.0">
+                  <VBox prefHeight="83.0" prefWidth="226.0">
                      <children>
-                        <TextArea fx:id="bio" prefHeight="64.0" prefWidth="201.0" promptText="tell us something about yourself" styleClass="inputStyle-textArea" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="bio" onKeyReleased="#checkBio" prefHeight="57.0" prefWidth="211.0" promptText="tell us something about yourself" styleClass="inputStyle-textArea" />
+                           </children>
+                        </HBox>
+                        <Text fx:id="bioError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="205.8001389503479" />
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="267.0">
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="225.0">
                      <children>
                         <Button fx:id="reset" mnemonicParsing="false" onAction="#handleResetAction" prefHeight="26.0" prefWidth="57.0" styleClass="main-background-color" text="Reset" textFill="WHITE" />
                         <HBox prefHeight="60.0" prefWidth="9.0" />
@@ -105,39 +116,47 @@
                </padding>
             </VBox>
          </right>
-         <center>
-            <VBox prefHeight="446.0" prefWidth="302.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <left>
+            <VBox prefHeight="338.0" prefWidth="232.0" spacing="20.0" BorderPane.alignment="CENTER">
                <padding>
                   <Insets left="46.0" />
                </padding>
                <children>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  <VBox prefHeight="67.0" prefWidth="189.0">
                      <children>
-                        <TextField fx:id="phoneNumber" prefHeight="27.0" prefWidth="171.0" promptText="Phone Number" styleClass="inputStyle" />
+                        <TextField fx:id="phoneNumber" onKeyReleased="#checkingPhoneNum" prefHeight="27.0" prefWidth="190.0" promptText="Phone Number" styleClass="inputStyle" />
+                        <Text fx:id="errorPhoneNumber" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="189.0000901222229" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  </VBox>
+                  <VBox prefHeight="48.0" prefWidth="213.0">
                      <children>
-                        <TextField fx:id="name" prefHeight="27.0" prefWidth="171.0" promptText="Name" styleClass="inputStyle" />
+                        <TextField fx:id="name" onKeyReleased="#checkingName" prefHeight="27.0" prefWidth="175.0" promptText="Name" styleClass="inputStyle" />
+                        <Text fx:id="nameError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="188.8000168800354" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  </VBox>
+                  <VBox prefHeight="54.0" prefWidth="211.0">
                      <children>
-                        <PasswordField fx:id="password" prefHeight="27.0" prefWidth="171.0" promptText="Password" styleClass="inputStyle" />
+                        <PasswordField fx:id="password" onKeyReleased="#checkingPassword" prefHeight="27.0" prefWidth="171.0" promptText="Password" styleClass="inputStyle" />
+                        <Text fx:id="passwordError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="189.600004196167" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  </VBox>
+                  <VBox prefHeight="71.0" prefWidth="193.0">
                      <children>
-                        <PasswordField fx:id="confirmPassword" prefHeight="27.0" prefWidth="171.0" promptText="Confirm Password" styleClass="inputStyle" />
+                        <PasswordField fx:id="confirmPassword" onKeyReleased="#checkingConfirmPassword" prefHeight="2.0" prefWidth="178.0" promptText="Confirm Password" styleClass="inputStyle" />
+                        <Text fx:id="ConfirmePasswordError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="187.2000412940979" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="46.0" prefWidth="183.0" spacing="20.0">
+                  </VBox>
+                  <VBox prefHeight="118.0" prefWidth="185.0">
                      <children>
-                        <TextField fx:id="email" prefHeight="27.0" prefWidth="171.0" promptText="Email" styleClass="inputStyle" />
+                        <TextField fx:id="email" onKeyReleased="#checkingEmail" prefHeight="30.0" prefWidth="192.0" promptText="Email" styleClass="inputStyle" />
+                        <Text fx:id="emailError" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-color" wrappingWidth="190.40005338191986" />
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="356.0" prefWidth="71.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
