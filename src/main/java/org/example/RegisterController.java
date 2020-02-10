@@ -298,4 +298,7 @@ public class RegisterController implements Initializable,RegisterInt {
         //countryBox.getItems().addAll(countries);
 
     }
+
+    public RegisterController() {
+    }
 }

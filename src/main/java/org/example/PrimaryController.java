@@ -37,7 +37,7 @@ public class PrimaryController {
     @FXML
     private void switchToLogin()  {
         try {
-            App.setRoot("register.fxml");
+            App.setRoot("register");
         }
         catch(IOException e){
             System.out.println("no fxml file");
