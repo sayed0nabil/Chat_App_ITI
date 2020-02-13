@@ -6,7 +6,6 @@ module org.example {
     requires java.naming;
     requires java.rmi;
     requires org.kordamp.ikonli.javafx;
-    requires java.rmi;
     opens org.example to javafx.fxml;
     exports org.example.model ;
     exports org.example;
