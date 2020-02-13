@@ -5,11 +5,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
+import org.example.Interfaces.IChatService;
 import org.example.model.Contact;
+import org.example.model.User;
 import org.example.model.UserStatus;
 import org.kordamp.ikonli.javafx.FontIcon;
 import javafx.scene.control.Tooltip;
 import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ChatController implements Initializable, ChatControllerInterface {
@@ -25,8 +32,21 @@ public class ChatController implements Initializable, ChatControllerInterface {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setToolTip();
-        Contact contact=new Contact("Abdelrahman",new Image(getClass().getResourceAsStream("abdo.jpg")), UserStatus.ONLINE);
-        contactsList.getChildren().add(contact);
+        Registry reg;
+        try {
+            reg = LocateRegistry.getRegistry("localhost");
+            IChatService chatService = (IChatService) reg.lookup("ChatService");
+            List<User> friends = chatService.getFriendList(1);
+            for(User friend: friends){
+                Contact contact=new Contact(friend.getName(),new Image(getClass().getResourceAsStream("abdo.jpg")), UserStatus.ONLINE);
+                contactsList.getChildren().add(contact);
+            }
+
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
