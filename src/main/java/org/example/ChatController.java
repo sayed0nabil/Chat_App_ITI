@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import org.example.model.Contact;
 import org.example.model.MSG;
+import org.example.model.User;
 import org.example.model.UserStatus;
 import org.kordamp.ikonli.javafx.FontIcon;
 import javafx.scene.control.Tooltip;
@@ -30,7 +31,7 @@ public class ChatController implements Initializable, IChatController {
         contactsList.getChildren().add(contact);
     }
 
-    public void sendMessage() {
+    public void send() {
         String message = messageTextArea.getText();
         messageTextArea.setText("");
         System.out.println(message);
@@ -75,7 +76,9 @@ public class ChatController implements Initializable, IChatController {
     public void exit() {
 
     }
-
+    public User getSelectedContact(){
+        return null;
+    }
     private void setToolTip(){
         Tooltip profileTooltip, groupTooltip, addFriendTooltip, notificationTooltip, saveChatTooltip, logoutTooltip;
         profileTooltip = new Tooltip("Profile");

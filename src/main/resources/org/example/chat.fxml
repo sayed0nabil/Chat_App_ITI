@@ -105,7 +105,7 @@
                               <Insets left="5.0" top="5.0" />
                            </padding>
                         </TextArea>
-                        <Button minWidth="49.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="36.0" prefWidth="53.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-font-size: 18; -fx-font-weight: bold; -fx-font-family: Comic Sans MS; -fx-background-color: #1e82dc; -fx-text-fill: white;">
+                        <Button minWidth="49.0" mnemonicParsing="false" onAction="#send" prefHeight="36.0" prefWidth="53.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-font-size: 18; -fx-font-weight: bold; -fx-font-family: Comic Sans MS; -fx-background-color: #1e82dc; -fx-text-fill: white;">
                            <HBox.margin>
                               <Insets left="20.0" top="15.0" />
                            </HBox.margin>
@@ -118,7 +118,7 @@
                         </Button>
                   </HBox>
                   <ScrollPane prefHeight="426.0" prefWidth="555.0" GridPane.rowIndex="1">
-                        <VBox prefHeight="410.0" prefWidth="552.0" style="-fx-border-color: #ffffff  #ffffff  #1e82dc #ffffff;" />
+                        <VBox onDragDetected="#send" prefHeight="410.0" prefWidth="552.0" style="-fx-border-color: #ffffff  #ffffff  #1e82dc #ffffff;" />
                   </ScrollPane>
                   <HBox prefHeight="101.0" prefWidth="555.0" style="-fx-border-color: #ffffff  #ffffff  #1e82dc #ffffff;">
                         <ImageView fitHeight="75.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">

@@ -9,12 +9,13 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class ClientImp extends UnicastRemoteObject implements IClient {
+    private IChatController view;
 
     protected ClientImp() throws RemoteException {
     }
 
     public ClientImp(IChatController view) throws RemoteException {
-
+     this.view = view ;
     }
 
     @Override
