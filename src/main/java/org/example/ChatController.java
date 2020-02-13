@@ -6,13 +6,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import org.example.model.Contact;
+import org.example.model.MSG;
 import org.example.model.UserStatus;
 import org.kordamp.ikonli.javafx.FontIcon;
 import javafx.scene.control.Tooltip;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ChatController implements Initializable, ChatControllerInterface {
+public class ChatController implements Initializable , IChatController {
 
     @FXML
     TextArea messageTextArea;
@@ -29,59 +30,48 @@ public class ChatController implements Initializable, ChatControllerInterface {
         contactsList.getChildren().add(contact);
     }
 
-    @Override
     public void sendMessage() {
         String message = messageTextArea.getText();
         messageTextArea.setText("");
         System.out.println(message);
     }
 
-    @Override
     public void sendAudio() {
 
     }
 
-    @Override
     public void saveChat() {
 
     }
 
-    @Override
     public void updateProfile() {
 
     }
 
-    @Override
     public void addContact() {
 
     }
 
-    @Override
     public void createGroupChat() {
 
     }
 
-    @Override
     public void changeStatus() {
 
     }
 
-    @Override
     public void showNotifications() {
 
     }
 
-    @Override
     public void enableChatBot() {
 
     }
 
-    @Override
     public void logout() {
 
     }
 
-    @Override
     public void exit() {
 
     }
@@ -108,6 +98,11 @@ public class ChatController implements Initializable, ChatControllerInterface {
         Tooltip.install(notificationIcon, notificationTooltip);
         Tooltip.install(saveChatIcon, saveChatTooltip);
         Tooltip.install(logoutIcon, logoutTooltip);
+
+    }
+
+    @Override
+    public void display(MSG message) {
 
     }
 }
