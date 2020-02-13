@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        scene = new Scene(loadFXML("login"));
+        scene = new Scene(loadFXML("chat"));
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chat Application");
         primaryStage.sizeToScene();
