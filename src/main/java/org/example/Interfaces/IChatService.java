@@ -11,12 +11,12 @@ import java.util.List;
 
 public interface IChatService extends Remote {
 
-    List<User> getFriendList(int userId) throws RemoteException;
+    List<User> getFriendList(User user) throws RemoteException;
     void changeStatus(UserStatus userStatus) throws RemoteException;
-    Message sendMessage(User user) throws RemoteException;
+    Message sendMessage(int userId, Message message) throws RemoteException;
     List<Notification>getNotifications() throws RemoteException;
-    void register(User user) throws RemoteException;
-    void unRegister(User user) throws RemoteException;
+    void register(int userId, IUserService userService) throws RemoteException;
+    void unRegister(int userId) throws RemoteException;
     void addFriend() throws RemoteException;
     void sendGroupMsg(User user, Message groupMessage) throws RemoteException;
 }
