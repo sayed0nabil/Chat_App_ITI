@@ -6,7 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import org.example.model.Contact;
-import org.example.model.MSG;
+import org.example.model.Message;
 import org.example.model.User;
 import org.example.model.UserStatus;
 import org.kordamp.ikonli.javafx.FontIcon;
@@ -105,7 +105,7 @@ public class ChatController implements Initializable, IChatController {
     }
 
     @Override
-    public void display(MSG message) {
+    public void display(Message message) {
 
     }
 }

@@ -3,17 +3,17 @@ package org.example.model;
 import javafx.scene.layout.HBox;
 
 public class MSGview extends HBox {
-    private MSG message ;
+    private Message message ;
 
-    public MSG getMessage() {
+    public Message getMessage() {
         return message;
     }
 
-    public void setMessage(MSG message) {
+    public void setMessage(Message message) {
         this.message = message;
     }
 
-    public MSGview(MSG message) {
+    public MSGview(Message message) {
         this.message = message;
     }
 

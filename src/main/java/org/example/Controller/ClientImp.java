@@ -2,7 +2,7 @@ package org.example.Controller;
 
 import org.example.IChatController;
 import org.example.model.IClient;
-import org.example.model.MSG;
+import org.example.model.Message;
 import org.example.model.Notification;
 
 import java.rmi.RemoteException;
@@ -19,11 +19,11 @@ public class ClientImp extends UnicastRemoteObject implements IClient {
     }
 
     @Override
-    public void receive(MSG message) throws RemoteException {
+    public void receive(Message message) throws RemoteException {
 
     }
 
-    public void sendMessage(int id, MSG message){
+    public void sendMessage(int id, Message message){
 
     }
     @Override

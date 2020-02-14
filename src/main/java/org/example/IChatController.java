@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.model.MSG;
+import org.example.model.Message;
 
 public interface IChatController {
-    void display(MSG message) ;
+    void display(Message message) ;
 }

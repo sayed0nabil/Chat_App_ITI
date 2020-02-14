@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class MSG {
+public class Message {
     private int id;
     private String text ;
     private String format;
@@ -29,13 +29,13 @@ public class MSG {
         this.format = format;
     }
 
-    public MSG(){}
+    public Message(){}
 
-    public MSG(int id, String text) {
+    public Message(int id, String text) {
         this.text = text;
     }
 
-    public MSG(int id, String text,String format) {
+    public Message(int id, String text,String format) {
         this.id = id;
     }
 }
